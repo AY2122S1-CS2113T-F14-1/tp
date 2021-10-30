@@ -140,6 +140,7 @@ public class MainParser {
         case COMMAND_RETURN:
             return new ReturnCommand();
         case COMMAND_HELP:
+            // Fallthrough
         default:
             return new HelpCommand();
         }

@@ -31,10 +31,10 @@ public class Parser {
      * @return String array containing the parameters.
      */
     protected static String[] splitInput(String input) {
-        Function<MatchResult, String> replace = x -> DELIMITER + x.group();
+        Function<MatchResult, String> replacer = x -> DELIMITER + x.group();
         Pattern pattern = Pattern.compile(LABEL_SYNTAX);
         Matcher matcher = pattern.matcher(input);
-        String processedInput = matcher.replaceAll(replace);
+        String processedInput = matcher.replaceAll(replacer);
         String[] parameters = processedInput.split(DELIMITER);
         return trimParameters(parameters);
     }
